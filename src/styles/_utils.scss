@@ -1,0 +1,28 @@
+@use "./mixins" as *;
+
+.main-wrapper {
+  max-width: 1920px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container {
+  width: 1404px;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  @include notebook {
+    width: 1270px;
+  }
+  @include netbook {
+    width: 1063px;
+  }
+  @include tablet {
+    width: 808px;
+  }
+  @include mobile {
+    width: 100%;
+  }
+}
