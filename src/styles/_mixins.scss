@@ -5,7 +5,7 @@
 }
 
 @mixin notebook {
-  @media all and (max-width: 1488px) {
+  @media all and (max-width: 1448px) {
     @content;
   }
 }
@@ -23,7 +23,19 @@
 }
 
 @mixin mobile {
-  @media all and (max-width: 807px) {
+  @media all and (max-width: 768px) {
     @content;
   }
+}
+
+@mixin regularText($fontSize) {
+  font-family: "Montserrat", sans-serif;
+  font-size: $fontSize;
+  font-weight: 400;
+}
+
+@mixin sectionTitle ($fontSize) {
+  font-family: "Montserrat", sans-serif;
+  font-size: $fontSize;
+  font-weight: 600;
 }

@@ -1,0 +1,164 @@
+@import "./styles/style";
+
+.main {
+  background: $white;
+}
+
+.banner {
+  background: url('./assets/images/main-bg.png') no-repeat;
+  background-position: 50%;
+
+  @include mobile {
+    background: url('./assets/images/main-bg-mob.png') no-repeat;
+    background-size: cover;
+  }
+
+  &__content {
+    position: relative;
+    padding-top: 210px;
+    padding-bottom: 184px;
+
+    @include tablet {
+      padding-top: 145px;
+      padding-bottom: 120px;
+    }
+
+    @include mobile {
+      padding-top: 15px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    @include mobile {
+      position: absolute;
+      min-width: 318px;
+      bottom: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    & span {
+      display: inline-block;
+      font-size: Clamp(24px, 3.5vw, 48px);
+      font-weight: 700;
+      padding: 12px 18px;
+
+      @include mobile {
+        padding: 8px 12px;
+      }
+    }
+
+    &_result {
+      background: $lightPurple;
+      color: $white;
+      border-radius: 8px 8px 8px 0;
+    }
+
+    &_term {
+      background: $white;
+      color: $lightPurple;
+      border-radius: 0 0 8px 8px;
+
+      @include mobile {
+        background: $lightPurpleGradient;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+
+    @include tablet {
+      width: 32%;
+    }
+
+    @include mobile {
+      display: block;
+      width: 52.9%;
+      position: static;
+      margin: 0 auto;
+    }
+  }
+}
+
+.welcome {
+  padding-top: 96px;
+  padding-bottom: 96px;
+
+  @include mobile {
+    padding-top: 75px;
+    padding-bottom: 30px;
+  }
+
+  &__text {
+    font-size: rem(24);
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    color: $black;
+
+    @include mobile {
+      font-size: rem(18);
+    }
+  }
+}
+
+.laboratory {
+  background: $lightPurpleGradient;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  @include tablet {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  &__content {
+    position: relative;
+
+  }
+
+  &__title {
+    @include sectionTitle(rem(36));
+    color: $black;
+    margin-bottom: 36px;
+    @include tablet {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__text {
+    width: 73%;
+    @include regularText(Clamp(18px, 1.4vw, 21px));
+    margin-bottom: 18px;
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    border-radius: 8px;
+    width: 23.1%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    @include tablet {
+      position: static;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+  }
+  &__button {
+    margin-top: 36px;
+    @include tablet {
+      margin-top: 24px;
+    }
+  }
+}

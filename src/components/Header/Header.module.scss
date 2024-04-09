@@ -1,0 +1,120 @@
+@import '../../styles/style.scss';
+
+.header {
+  background: $white;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 60.5px;
+    padding-bottom: 60.5px;
+
+    @include tablet {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__navigation {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    & img {
+      @include tablet {
+        width: 35%;
+      }
+      @include mobile {
+        width: unset;
+      }
+    }
+
+    & span {
+      font-family: "Montserrat", sans-serif;
+      font-size: Clamp(10px,1vw, 14px);
+      font-weight: 400;
+      color: $darkGrey;
+      margin-left: rem(24);
+
+      @include mobile {
+        font-size: rem(12);
+        margin-left: unset;
+
+        & br {
+          @include mobile {
+            display: none;
+
+          }
+        }
+      }
+    }
+  }
+
+  &__contact {
+    & a {
+      display: flex;
+      position: relative;
+      font-size: Clamp(12px, 1.3vw, 18px);
+      font-weight: 600;
+      color: $black;
+      &::before {
+        position: absolute;
+        content: url('../../assets/images/phone.svg');
+        left:-45px;
+        top: 5px;
+        @include tablet {
+          position: static;
+        }
+      }
+    }
+
+    & span {
+      font-size: Clamp(12px,1vw, 14px);
+      font-weight: 400;
+      color: $darkGrey;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__item {
+    padding: 8px 24px;
+
+    &:hover {
+      background: rgba(233, 234, 249, 1);
+    }
+
+    & a {
+      display: inline-block;
+      font-family: "Montserrat", sans-serif;
+      font-size: Clamp(12px, 1.3vw, 18px);
+      font-weight: 500;
+      color: $black;
+
+      &:active {
+        color: $purple;
+      }
+
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+}
