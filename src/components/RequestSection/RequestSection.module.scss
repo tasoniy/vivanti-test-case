@@ -1,0 +1,47 @@
+@import '../../styles/style.scss';
+
+.request {
+  background: $lightPurpleGradient;
+
+  &__content {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    text-align: center;
+
+    @include tablet {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+
+    @include mobile {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    @include sectionTitle(36);
+    color: $black;
+    margin-bottom: 48px;
+
+    @include mobile {
+      font-size: rem(28);
+      margin-bottom: 36px;
+    }
+  }
+
+  &__text {
+    @include regularText(rem(21));
+    margin-bottom: 48px;
+
+    @include mobile {
+      font-size: rem(18);
+      margin-bottom: 36px;
+    }
+
+    & br {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
