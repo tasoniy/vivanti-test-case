@@ -1,0 +1,95 @@
+@import '../../styles/style.scss';
+
+.gallery {
+  &__content {
+    padding-top: 96px;
+    padding-bottom: 96px;
+
+    @include tablet {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__title {
+    @include sectionTitle(rem(36));
+    margin-bottom: 48px;
+
+    @include mobile {
+      margin-bottom: 24px;
+      font-size: rem(28);
+    }
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 24px;
+
+    @include tablet{
+      gap: 12px;
+    }
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    border-radius: 8px;
+    &:nth-of-type(3) {
+      @include mobile {
+        display: none;
+      }
+    }
+    @include mobile {
+      max-width: 500px;
+      max-height:386px;
+      height: 67.3vw;
+      border-radius: 3.77px;
+    }
+    &_big {
+      grid-row: span 2;
+      width: 100%;
+      height: auto;
+      @include mobile {
+        height: 67.3vw;
+      }
+    }
+
+    &_medium {
+      width: 100%;
+    }
+
+    &_small {
+      width: 48.3%;
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+    &:last-of-type {
+      @include  mobile {
+        display: none;
+      }
+    }
+    & img:not(:first-of-type) {
+      @include mobile {
+        margin-top: 24px;
+      }
+    }
+  }
+}
